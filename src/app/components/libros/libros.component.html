@@ -1,5 +1,5 @@
 <div class="card bg-light mb-3">
-<div class="card-header">{{titulo}}</div>
+<div class="card-header"><h4 id="titulo">{{titulo}}</h4></div>
 <div class="card-body">
     <button class="btn btn-primary my-2" routerLink="/libros/form">Crear Libro</button>
 <table class="table table-hover table-stripped">
@@ -10,6 +10,7 @@
             <th>AUTOR</th>
             <th>EDITORIAL</th>
             <th>EDITAR</th>
+            <th>ELIMINAR</th>
 
         </tr>
     </thead>
@@ -21,6 +22,8 @@
             <td>{{libro.editorial}}</td>
             <td><button class="btn btn-secondary" 
                 [routerLink]="['/libros/form',libro.idLibro]">Editar</button></td>
+                <td><button class="btn btn-danger" (click)="eliminar(libro)"
+                    >Eliminar</button></td>
 
                
         </tr>
